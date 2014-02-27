@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Gulp, Heroku + More! - Sudo Soldiers</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Hacking like a Hipster</h1>
+          <h3>Gulp, Heroku + more</h3>
+          <p>
+            <small>Sudo Soldiers <br> 02.27.2014</small>
+          </p>
+        </section>
+
+        <section>
+          <h2>Hey there, I’m Grant.</h2>
+          <p>
+            <ul>
+              <li>CS, UW
+              <li>Open web evangelist
+              <li>@GrantTimmerman
+            </ul>
+          </p>
+
+          <aside class="notes">
+            Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+          </aside>
+        </section>
+
+        <!-- Example of nested vertical slides -->
+        <section>
+          <h2>Sudo Soldiers</h2>
+          <ul>
+            <li>https://www.facebook.com/groups/uwhackers/
+            <li>https://github.com/SudoSoldiers/
+            <li>http://students.washington.edu/uwsudo/
+            <li>uwsudo@uw.edu
+          </ul>
+        </section>
+
+        <section>
+          <h1>On the menu</h1>
+          <ul>
+            <li>Grunt
+            <li>Gulp
+            <li>Heroku
+          </ul>
+        </section>
+
+        <section>
+          <h2>So, who's a hipster?</h2>
+          <img src="http://technologyuninhibited.files.wordpress.com/2012/04/hipster-glasses21.jpg" alt="">
+          <blockquote>"Hipsters are a subculture of men and women typically in their 20's and 30's that value independent thinking, counter-culture, progressive politics, an appreciation of art and indie-rock, creativity, intelligence, and witty banter."</blockquote>
+        </section>
+
+        <section>
+          <h2>Who's a hipster hacker?</h2>
+
+          <blockquote>"A hacker who uses artisanal development tools that we used to like before they went mainstream"</blockquote>
+        </section>
+
+        <section>
+          <h2>We use</h2>
+          <ul>
+            <li>Node
+            <li>Go
+            <li>Scala
+            <li>Julia
+            <li>Haskell
+            <li>Gulp
+            <li>Coffeescript
+            <li>Bower Yeoman Grunt
+          </ul>
+        </section>
+
+        <section>
+          <h2>A True Hipster</h2>
+          <div style="text-align:center;display:inline-block;overflow: hidden;height: 100%;width:500px;">
+            <blockquote class="twitter-tweet" lang="en"><p>I already built Atom as an Emacs extension in 1994.</p>&mdash; Hipster Hacker (@hipsterhacker) <a href="https://twitter.com/hipsterhacker/statuses/438790074348482560">February 26, 2014</a></blockquote>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </section>
+
+        <section>
+          <h1>Let's dive in!</h1>
+        </section>
+
+        <section>
+          <h2>So you've heard of <q>build systems</q>.</h2>
+          <h3>like Grunt, Make, and Gulp</h3>
+          <br>
+          <p>But what are they?</p>
+          <p>And what can they do?</p>
+        </section>
+
+        <section>
+          <h2>Build systems <em>automate</em> common tasks</h2>
+          <ul>
+            <li>compiling computer source code into binary code
+            <li>packaging binary code
+            <li>running tests
+            <li>deployment to production systems
+            <li>creating documentation and/or release notes
+          </ul>
+        </section>
+
+        <section data-background="rgb(238, 134, 50)">
+          <h1>Introducting GRUNT</h1>
+          <h2>The Javascript TaskRunner</h2>
+          <img src="https://pbs.twimg.com/profile_images/2563508262/falgg2jybmhgk16y62lr.png" alt="" style="background-color:transparent;border:none;box-shadow:none;">
+        </section>
+
+        <section data-background="rgb(238, 134, 50)">
+          <h2>It automates things you do already</h2>
+          <h4>like...</h4>
+          <ul>
+            <li>coffeescript
+            <li>handlebars
+            <li>jade
+            <li>Sass
+            <li>JSHint
+            <li>Require.js
+            <li>And much much more
+          </ul>
+        </section>
+
+        <section data-background="rgb(238, 134, 50)">
+          <h2>Who uses GRUNT?</h2>
+
+          <ul>
+            <li>Twitter
+            <li>jQuery
+            <li>Adobe
+            <li>Modernizr
+            <li>A TON of startups
+          </ul>
+          <p></p>
+          <p><a href="http://gruntjs.com/who-uses-grunt">Projects, Applications, and Companies Using GRUNT</a></p>
+        </section>
+
+        <section data-background="rgb(238, 134, 50)">
+          <h2>What it looks like</h2>
+          <p>Gruntfile.js</p>
+          <pre><code data-trim>
+grunt.initConfig({
+  uglify: {
+    build: {
+      src: 'js/reveal.js',
+      dest: 'js/reveal.min.js'
+    }
+  },
+
+  cssmin: {
+    compress: {
+      files: {
+        'css/reveal.min.css': [ 'css/reveal.css' ]
+      }
+    }
+  }
+})
+          </code></pre>
+        </section>
+
+        <section data-background="rgb(238, 134, 50)">
+          <h2>Example</h2>
+          <pre><code data-trim>
+zip: {
+  'reveal-js-presentation.zip': [
+    'index.html',
+    'css/**',
+    'js/**',
+    'lib/**',
+    'images/**',
+    'plugin/**'
+  ]
+}
+          </code></pre>
+          <li>Every time you save, generate a zip
+          <br>
+          <br>
+          <h3><em>It's that easy</em></h3>
+        </section>
+
+        <section data-background="rgb(238, 134, 50)">
+          <h1>Demo!</h1>
+        </section>
+
+        <section>
+          <h1>Gulp</h1>
+          <h3>The hipster GRUNT</h3>
+          <img src="https://raw2.github.com/gulpjs/artwork/master/gulp-2x.png" alt="" style="background-color:transparent;border:none;box-shadow:none;">
+        </section>
+
+        <section>
+          <h2>What's wrong with GRUNT?</h2>
+          <ul>
+            <li>It's really slow (up to 20 seconds per build for me)</li>
+            <li>It's ugly</li>
+            <li>It's hard to learn</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>What's right with Gulp?</h2>
+          <ul>
+            <li>It's blazing fast</li>
+            <li>It uses Node streams to parallelize work</li>
+            <li>It's beautiful</li>
+            <li>It's easy to learn</li>
+          </ul>
+          <br>
+          <br>
+          <h3>= It's hipster</h3>
+        </section>
+
+        <section>
+          <h1>Demo!</h1>
+        </section>
+
+        <section>
+          <h3>How do you share your <em>awesome</em> website to the world?</h3>
+        </section>
+
+        <section data-background="rgb(70, 67, 104)">
+          <h1>Heroku</h1>
+          <img src="http://www.touchinspiration.com/assets/heroku-logo-af8c8b034b4ba443a627b2905fc71a86.png" alt="">
+        </section>
+
+        <section data-background="rgb(70, 67, 104)">
+          <h3>Why use it?</h3>
+          <ul>
+            <li>Tons of tools
+            <li>Supports most languages
+            <li>Works perfectly with git
+            <li>1 line deploy
+            <li>Very scalable
+          </ul>
+          <br>
+          <br>
+          <h3>= It's hipster</h3>
+        </section>
+
+        <section data-background="rgb(70, 67, 104)">
+          <h2>Who uses Heroku?</h2>
+
+          <ul>
+            <li>Github
+            <li>Facebook
+            <li>Code For America
+            <li>Mail Chimp
+            <li>TED
+            <li>And a TON of startups
+          </ul>
+        </section>
+
+        <section data-background="rgb(70, 67, 104)">
+          <h2>How to use?</h2>
+          <code>git push heroku master</code>
+        </section>
+
+        <section data-background="rgb(70, 67, 104)">
+          <h2>Add-ons</h2>
+          <h4>Heroku's killer feature</h4>
+          <ul>
+            <li>Caching
+            <li>Email
+            <li>DNS
+            <li>Data storage
+            <li>Performance monitoring
+            <li>Custom domains
+            <li>...most of them are <em>free</em>
+          </ul>
+        </section>
+
+        <section data-background="#007777">
+          <h1>Ok so let's make something</h1>
+        </section>
+
+        <section data-background="#007777">
+          <h2>Blog</h2>
+
+          <p>List all posts</p>
+          <p>View individual posts</p>
+          <p>Add a post</p>
+          <p>Commenting?</p>
+        </section>
+
+        <section>
+          <h2>What next</h2>
+          <ul>
+            <li><a href="http://socket.io">Socket.io</a>
+            <li>Programming is hard, but very fun
+            <li>Practice, a lot!
+          </ul>
+        </section>
+
+        <section>
+          <blockquote>Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.</blockquote>
+          <p> - Brian W. Kernighan</p>
+        </section>
+
+        <section>
+          <h2>Resources</h2>
+          <ul>
+            <li>http://hipsterdevstack.tumblr.com/
+            <li>http://gulpjs.com/
+            <li>http://heroku.com/
+          </ul>
+        </section>
+
+        <section>
+          <h1>That is all.</h1>
+          <p>@GrantTimmerman</p>
+          <p>github.com/grant</p>
+          <br>
+          <h3>Questions?</h3>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
