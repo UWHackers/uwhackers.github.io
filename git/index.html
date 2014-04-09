@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Git Like a Pro - Sudo Soldiers</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Git Like a Pro</h1>
+          <p>
+            <small>Sudo Soldiers <br> 04.09.2014</small>
+          </p>
+        </section>
+
+        <section>
+          <h2>Hi. I’m Karan.</h2>
+          <img src="http://www.goel.im/images/me.jpg" alt="" style="width:200px">
+          <p>
+            <ul>
+              <li>CS, UW
+              <li><3 code
+              <li><a href="http://www.goel.im">goel.im</a>
+              <li><a href="https://twitter.com/TheKaranGoel">@TheKaranGoel</a></li>
+            </ul>
+          </p>
+        </section>
+
+        <section>
+          <h2>Sudo Soldiers</h2>
+          <img src="http://i.imgur.com/a7B1FtF.jpg" alt="" style="width:700px">
+          <ul>
+            <li><a href="https://www.facebook.com/groups/uwhackers/">https://www.facebook.com/groups/uwhackers/</a>
+            <li><a href="https://github.com/SudoSoldiers/">https://github.com/SudoSoldiers/</a>
+            <li><a href="http://students.washington.edu/uwsudo/">http://students.washington.edu/uwsudo/</a>
+            <li>uwsudo@uw.edu
+          </ul>
+        </section>
+
+        <section>
+          <h2>Version control</h2>
+          <ul>
+            <li>track history of files</li>
+            <li>revert to a (previous) version</li>
+            <li>git, svn...</li>
+          </ul>
+        </section>
+
+
+        <section>
+          <h2><i>Distributed</i> Version control</h2>
+          <ul>
+            <li>no central server</li>
+            <li>a <i>clone</i> becomes a repository</li>
+            <li>clone has full history</li>
+            <li>clones can exchange changes with a remotely hosted repo</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>So...</h2>
+          <h1>Git</h1>
+          <blockquote>Git is a free and open source distributed version control system...</blockquote>
+          <ul>
+            <li>Linus</li>
+            <li>C</li>
+            <li>> svn</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Github</h2>
+          <ul>
+            <li>Website</li>
+            <li>Host your remote repos</li>
+            <li>Social network for nerds</li>
+            <li>Super awesome!</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Git vocabulary</h2>
+          <ul>
+            <li>branch - parallel version of repository</li>
+            <li>clone - creating a copy of repository</li>
+            <li>commit - a change, or revision</li>
+            <li>repository - "a project folder"</li>
+            <li>remote - version hosted on a server</li>
+            <li>pull/push - get/send updates</li>
+            <li>fetch - get changes without merging them</li>
+            <li>working tree - current version of local repo</li>
+          </ul>
+        </section>
+
+        <section>
+          <section>
+            <h1>Commit</h1>
+          </section>
+          <section>
+            <p>2 steps to register your changes</p>
+            <ul>
+              <li>Working tree -> Staging index <br>
+                <pre><code data-trim>git add files.txt</code></pre></li>
+              <li>Staging index -> Git repository</li>
+              <pre><code data-trim>git commit -m "a helpful commit message"</code></pre></li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>SHA-1</h1>
+          </section>
+          <section>
+          <ul>
+            <li>Each commit is addressed by it's hashcode - SHA-1</li>
+            <li>Each commit is an object - SHA-1 is a field</li>
+            <li>40 bytes long</li>
+          </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Installing git</h1>
+          </section>
+          <section>
+          <p><a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a></p>
+          <ul>
+            <li>Binaries for Win, Mac, Linux</li>
+            <li>Build from source</li>
+          </ul>
+          <blockquote>"If you want to build [git] on Windows: Don't."</blockquote>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Configure git</h1>
+          </section>
+          <section>
+          <p>Important since Github uses email to identify user (unless using ssh)</p>
+          <pre><code># configure the user which will be used by git
+# Of course you should use your name
+git config --global user.name "Example Surname"
+
+# Same for the email address
+git config --global user.email "your.email@gmail.com" 
+          </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Create a repository</h2>
+          </section>
+          <section>
+          <pre><code>git init awesome-project</code></pre>
+          <p>Or</p>
+          <pre><code>cd ~/awesome-project
+git init</code></pre>
+          <h3>Or, clone.</h3>
+          <pre><code>git clone link/to/remote</code></pre>
+        </section>
+        </section>
+
+        <section>
+          <section>
+          <h1>.gitignore</h1>
+          </section>
+          <section>
+          <p>Specifies intentionally untracked files to ignore</p>
+          <pre><code>cd awesome-project
+vim .gitignore</code></pre>
+
+          <pre><code># a comment
+.to-exclude
+!include-this.txt</code></pre>
+          <p>Complete pattern guide here: <a href="http://git-scm.com/docs/gitignore">http://git-scm.com/docs/gitignore</a></p>
+          <p>Committed files are not automatically removed. Use this to remove files from git repo:</p>
+          <pre><code>git rm -r --cached awesome-file</code></pre>
+          </section>
+        </section>
+
+        <section data-background="gray">
+          <h2>Usual workflow</h2>
+          <pre><code># assuming you have a repo with changes made to it
+
+# this shows files that have been changed, and the status of stage
+git status
+
+# add all files to the stage
+git add .
+
+# commit the changes to local repo
+git commit -m "a message"</code></pre>
+        </section>
+
+        <section data-background="gray">
+          <h1>80/20</h1>
+        </section>
+
+        <section>
+          <h2>log</h2>
+          <pre><code># show git log
+git log
+
+# this is what the output looks like
+commit bcf7bd065199c1e79c8dcc57a9518bd53dec6da5
+Author: Karan Goel < karan@goel.im>
+Date:   Tue Apr 8 17:41:14 2014 -0700
+
+    started adding files for tomorrow</code></pre>
+
+          <p>Useful flags:</p>
+          <ul>
+            <li><code>--oneline</code> - give single line log</li>
+            <li><code>-N</code> - give last N commits</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Remotes</h2>
+          <p>A remote is a URL to a remote server where code lives. Default remote is called <i>origin</i></p>
+
+          <pre><code># add a new remote
+git remote add < remote> < link>
+
+# show all remotes
+git remote -v
+
+# fetches the code and merges it into your working directory
+git pull < remote> < branch>
+# fetches the code but does not merge it into your working directory
+git fetch < remote> < branch>
+
+# push my committed changes to remote and remember the upstread branch
+git push -u origin master</code></pre>
+        </section>
+
+        <section>
+          <section>
+            <h1>Github</h1>
+          </section>
+
+          <section>
+            <h2>Clone from Github</h2>
+
+            <pre><code># SSH
+git clone git@github.com:karan/Projects.git
+
+# HTTPS
+git clone https://github.com/karan/Projects.git</code></pre>
+        
+          </section>
+
+          <section>
+            <h2>Forking</h2>
+
+            <ul>
+              <li>Complete history of original repo</li>
+              <li>Encourages individual exploration</li>
+              <li>Forking != Cloning</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Pull Requests</h2>
+            <ul>
+              <li>Merging with traceability</li>
+              <li>Peer-review via GitHub & Git</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h1>Ninja tricks</h1>
+        </section>
+
+        <section>
+          <h3>Correct the last commit</h3>
+          <pre><code># because coding while drunk is bad for you
+git commit -m "my boss is a dick"</code></pre>
+
+<pre data-fragment-index="0" class="fragment"><code># thank god for git
+git commit --amend -m "my boss is a fat dick"</code></pre>
+        </section>
+
+        <section>
+          <h3>Check history of specific file</h3>
+          <pre><code>git log -- filename</code></pre>
+        </section>
+
+        <section>
+          <h3>Undo commit</h3>
+          <pre><code># Revert to a previous commit by SHA-1 hash
+git reset --hard < hash>
+
+# or simply undo the last commit
+git reset --hard HEAD^</code></pre>
+        </section>
+
+        <section>
+          <h3>Tagging</h3>
+          <pre><code># tags are used to mark specific points in history
+
+# list all tags
+git tag
+
+# add a new tag
+git tag -a "v1.0"
+
+# or add a tag for any commit
+git tag -a "v1.0" < hash>
+
+# push tags to remote
+git push --tag </code></pre>
+        </section>
+
+        <section>
+          <h3>Branches</h3>
+          <pre><code># create a new branch
+git branch branch-name
+
+# list all branches in the current repository
+git branch
+
+# switch to an existing branch
+git checkout branch-name
+
+# create a branch and switch to it
+git checkout -b branch-name
+
+# delete a branch
+git branch -d branch-name
+
+# merge two branches (source into target) (make sure to be on target)
+git merge source</code></pre>
+        </section>
+
+        <section>
+          <h3>Merge conflicts</h3>
+          <pre><code># git is smart, but not really. when same line is changed more 
+# than once at the same time, conflicts can arise
+
+# this is what lines with conflicts look like
+
+<<<<<<< HEAD
+This is what my local repo has.
+=======
+This is what someone else did.
+>>>>>>> 0c7ac2ab7ab93366fb662e8292706c084001fb31 
+
+# manually select what to keep, commit and push!</code></pre>
+        </section>
+
+        <section>
+          <h3>Aliases</h3>
+          <pre><code>vim ~/.bashrc
+
+# git
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push $1 $1'
+
+# saves a gazillion keystrokes
+
+# for those who live on the edge
+alias yolo = 'git commit -am "TAG" && git push -f origin master'</code></pre>
+        </section>
+
+        <section data-background="teal">
+          <h2>Now what?</h2>
+          <ul>
+            <li>Signup for Github</li>
+            <li>Start working with git</li>
+            <li>Good resource: <a href="https://github.com/karan/Projects">karan/Projects</a></li>
+          </ul>
+        </section>
+
+        <section data-background="teal">
+          <h2>Resources</h2>
+          <ul>
+            <li><a href="http://git-scm.com/book">Git book</a></li>
+            <li><a href="Github help">https://help.github.com/</a></li>
+            <li><a href="http://www.ndpsoftware.com/git-cheatsheet.html">Visual cheatsheet</a></li>
+            <li><a href="http://eagain.net/articles/git-for-computer-scientists/">Git for computer scientists</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>That is all.</h1>
+          <p>@TheKaranGoel</p>
+          <p><a href="http://github.com/karan">github.com/karan</a></p>
+          <br>
+          <h3>Questions?</h3>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
