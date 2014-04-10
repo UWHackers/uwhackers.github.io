@@ -421,46 +421,6 @@ This is what someone else did.
         </section>
 
         <section>
-          <section>
-            <h1>Reverting</h1>
-          </section>
-          <section>
-            <h2>Remove uncommitted changes</h2>
-            <pre><code># Option 1
-# put changes and stash, and then drop the stash
-git stash
-git stash drop
-
-# Option 2
-# revert all uncommitted changes
-git reset --hard HEAD</code></pre>
-          </section>
-
-          <section>
-            <h1>Revert committed changes</h1>
-            <pre><code># this will uncommit changes, but not remove them
-# helpful when mistake in commit message, or added wrong files
-git reset --soft HEAD^</code></pre>
-          </section>
-
-          <section>
-            <h2>Revert pushed commits</h2>
-            <pre><code># within working directory, revert to a previous commit
-git reset --hard < hash>
-
-# now push these changes
-git push origin HEAD --force</code></pre>
-          </section>
-
-          <section>
-            <h2>Bottom line</h2>
-
-            <p><code>--soft</code> keeps the changes in stage.</p>
-            <p><code>--hard</code> nukes all changes.</p>
-          </section>
-        </section>
-
-        <section>
           <h3>Aliases</h3>
           <pre><code>vim ~/.bashrc
 
@@ -481,12 +441,8 @@ alias yolo = 'git commit -am "TAG" && git push -f origin master'</code></pre>
           <ul>
             <li>Signup for Github</li>
             <li>Start working with git</li>
-            <li>Good resource for projects + git: <a href="https://github.com/karan/Projects">karan/Projects</a></li>
+            <li>Good resource: <a href="https://github.com/karan/Projects">karan/Projects</a></li>
           </ul>
-        </section>
-
-        <section data-background="teal">
-          <h3>If you can't figure a command, Google it!</h3>
         </section>
 
         <section data-background="teal">
@@ -501,10 +457,10 @@ alias yolo = 'git commit -am "TAG" && git push -f origin master'</code></pre>
 
         <section>
           <h1>That is all.</h1>
-          <h3>Questions?</h3>
-          <p><a href="http://twitter.com/TheKaranGoel">@TheKaranGoel</a></p>
+          <p>@TheKaranGoel</p>
           <p><a href="http://github.com/karan">github.com/karan</a></p>
           <br>
+          <h3>Questions?</h3>
         </section>
 
       </div>
