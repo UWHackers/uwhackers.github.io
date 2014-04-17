@@ -23,3 +23,7 @@ Place for all presentations that have to be served.
 #### Git Like a Pro - 04.09.2014
 
 [http://sudosoldiers.github.io/git/#/](http://sudosoldiers.github.io/git/#/)
+
+#### Leap into the future with Leap Motion - 04.16.2014
+
+[http://sudosoldiers.github.io/leap-motion-slides/#/](http://sudosoldiers.github.io/leap-motion-slides/#/)
