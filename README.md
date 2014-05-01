@@ -12,6 +12,7 @@ All presentations during our weely meetings are deployed to this site. Please us
 | Git Like a Pro | Karan Goel | 04.09.2014 | [http://sudosoldiers.github.io/git/#/](http://sudosoldiers.github.io/git/#/) |
 | Leap Motion | Rukmal Weerawarana | 04.16.2014 | [http://sudosoldiers.github.io/leap-motion-slides/#/](http://sudosoldiers.github.io/leap-motion-slides/#/) |
 | REST For the Wicked | Karan Goel | 04.23.2014 | [http://sudosoldiers.github.io/rest/#/](http://sudosoldiers.github.io/rest/#/) |
+| Arduino | Nathaniel Guy | 04.30.2014 | [http://sudosoldiers.github.io/arduino/#/](http://sudosoldiers.github.io/arduino/#/) |
 
 
 ## Winter 2014
