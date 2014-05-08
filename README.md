@@ -8,16 +8,16 @@ All presentations during our weely meetings are deployed to this site. Please us
 
 | Title | Speaker | Date | Link |
 | ---- | ----- | ---- | ---- |
-| Open Sourcing Everything | Grant Timmerman | 04.02.2014 | [http://sudosoldiers.github.io/open-source-slides/#/](http://sudosoldiers.github.io/open-source-slides/#/) |
-| Git Like a Pro | Karan Goel | 04.09.2014 | [http://sudosoldiers.github.io/git/#/](http://sudosoldiers.github.io/git/#/) |
-| Leap Motion | Rukmal Weerawarana | 04.16.2014 | [http://sudosoldiers.github.io/leap-motion-slides/#/](http://sudosoldiers.github.io/leap-motion-slides/#/) |
-| REST For the Wicked | Karan Goel | 04.23.2014 | [http://sudosoldiers.github.io/rest/#/](http://sudosoldiers.github.io/rest/#/) |
 | Arduino | Nathaniel Guy | 04.30.2014 | [http://sudosoldiers.github.io/arduino/#/](http://sudosoldiers.github.io/arduino/#/) |
+| REST For the Wicked | Karan Goel | 04.23.2014 | [http://sudosoldiers.github.io/rest/#/](http://sudosoldiers.github.io/rest/#/) |
+| Leap Motion | Rukmal Weerawarana | 04.16.2014 | [http://sudosoldiers.github.io/leap-motion-slides/#/](http://sudosoldiers.github.io/leap-motion-slides/#/) |
+| Git Like a Pro | Karan Goel | 04.09.2014 | [http://sudosoldiers.github.io/git/#/](http://sudosoldiers.github.io/git/#/) |
+| Open Sourcing Everything | Grant Timmerman | 04.02.2014 | [http://sudosoldiers.github.io/open-source-slides/#/](http://sudosoldiers.github.io/open-source-slides/#/) |
 
 
 ## Winter 2014
 
 | Title | Speaker | Date | Link |
 | ---- | ----- | ---- | ---- |
-| Node.js | Karan Goel | 02.20.2014 | [http://sudosoldiers.github.io/node-slides/#/](http://sudosoldiers.github.io/node-slides/#/) |
 | Hacking like a Hipster | Grant Timmerman | 02.27.2014 | [http://sudosoldiers.github.io/grunt-gulp-heroku-slides/#/](http://sudosoldiers.github.io/grunt-gulp-heroku-slides/#/) |
+| Node.js | Karan Goel | 02.20.2014 | [http://sudosoldiers.github.io/node-slides/#/](http://sudosoldiers.github.io/node-slides/#/) |
