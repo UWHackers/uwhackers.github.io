@@ -8,6 +8,7 @@ All presentations during our weely meetings are deployed to this site. Please us
 
 | Title | Speaker | Date | Link |
 | ---- | ----- | ---- | ---- |
+| 3D Printing | Grant Timmerman | 05.14.2014 | [http://sudosoldiers.github.io/3d-printing/#/](http://sudosoldiers.github.io/3d-printing/#/) |
 | Arduino | Nathaniel Guy | 04.30.2014 | [http://sudosoldiers.github.io/arduino/#/](http://sudosoldiers.github.io/arduino/#/) |
 | REST For the Wicked | Karan Goel | 04.23.2014 | [http://sudosoldiers.github.io/rest/#/](http://sudosoldiers.github.io/rest/#/) |
 | Leap Motion | Rukmal Weerawarana | 04.16.2014 | [http://sudosoldiers.github.io/leap-motion-slides/#/](http://sudosoldiers.github.io/leap-motion-slides/#/) |
